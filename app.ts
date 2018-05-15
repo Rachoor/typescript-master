@@ -8,8 +8,8 @@ const myObj = {
 // myObj.myMethod();
 
 // Function
-function myFunction(text: string, arg2: string) {
-    console.log('Function:::', this, text, arg2);
+function myFunction(...text: string[]) {
+    console.log('Function:::', this, text);
 }
 myFunction('ABC','DEG');
 myFunction.call(myObj, 'ABC', 'DEF');
