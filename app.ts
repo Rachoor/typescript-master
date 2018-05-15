@@ -1,5 +1,16 @@
-// Function
-function myFunction() {
-    console.log(this);
+
+// Object Literal
+const myObj = {
+    myMethod() {
+        console.log('Object:::', this);
+    }
 }
-myFunction();
+// myObj.myMethod();
+
+// Function
+function myFunction(text: string, arg2: string) {
+    console.log('Function:::', this, text, arg2);
+}
+myFunction('ABC','DEG');
+myFunction.call(myObj, 'ABC', 'DEF');
+myFunction.apply(myObj, ['ABC', 'XYZ']);
